@@ -1,0 +1,14 @@
+<div class="container">
+    <legend>Edit Item</legend>
+    <form>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Name</label>
+        <input type="text" name="name" [(ngModel)] = "foodForm.name" class="form-control" id="txtName" />
+      </div>
+      <div class="mb-3">
+        <label for="txtArrivalDate" class="form-label">Arrival Date</label>
+        <input type="text" name="arrival_date" [(ngModel)] = "foodForm.arrival_date" class="form-control" id="txtArrivalDate" />
+      </div>
+      <button type="button" (click)="update()" class="btn btn-primary">Update</button>
+    </form>
+</div>
