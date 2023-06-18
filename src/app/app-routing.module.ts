@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { AddFoodComponent } from './components/add-food/add-food.component';
+import { EditFoodComponent } from './components/edit-food/edit-food.component';
+import { FoodListComponent } from './components/food-list/food-list.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'food/list',
-    pathMatch: 'full',
-  },
+  { path: '', pathMatch: 'full', redirectTo: 'food-truck-list' },
+  { path: 'add-food-truck', component: AddFoodComponent },
+  { path: 'edit-food-truck/:id', component: EditFoodComponent },
+  { path: 'food-truck-list', component: FoodListComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

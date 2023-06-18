@@ -1,7 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-warning"> 
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Food Truck</a>
-  </div>
-</nav>
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="header">
+  <div>Manage Food Truck</div>
+  <span class="nav-tool-items">
+    <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+  </span>
+</mat-toolbar>
 
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <!-- Sidenav -->
+  <mat-sidenav
+    #sidenav
+    [mode]="isBiggerScreen() ? 'over' : 'side'"
+    [(opened)]="opened"
+    [fixedInViewport]="true"
+    [fixedTopGap]
+  >
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active" routerLink="/add-food-truck">
+        <mat-icon>add</mat-icon> Add Food Truck
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/food-truck-list">
+        <mat-icon>format_list_bulleted</mat-icon> View Food Trucks
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
