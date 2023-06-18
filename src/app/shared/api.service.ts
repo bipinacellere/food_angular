@@ -24,8 +24,8 @@ export class ApiService {
   }
 
   // Get all food trucks
-  GetFoods() {
-    return this.http.get(`${this.endpoint}/food`);
+  GetFoods(today:boolean=false) {
+    return this.http.get(`${this.endpoint}/food?today=${today}`);
   }
 
   // Get food truck

@@ -66,12 +66,10 @@ export class EditFoodComponent implements OnInit {
   updateFoodForm() {
     console.log(this.foodForm.value);
     var id = this.actRoute.snapshot.paramMap.get('id');
-    if (window.confirm('Are you sure you want to update?')) {
       this.foodApi
         .UpdateFood(id, this.foodForm.value)
         .subscribe((res) => {
           this.ngZone.run(() => this.router.navigateByUrl('/food-truck-list'));
         });
-    }
   }
 }
