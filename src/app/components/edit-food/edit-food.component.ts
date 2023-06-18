@@ -64,12 +64,15 @@ export class EditFoodComponent implements OnInit {
 
   /* Update book */
   updateFoodForm() {
-    console.log(this.foodForm.value);
     var id = this.actRoute.snapshot.paramMap.get('id');
-      this.foodApi
-        .UpdateFood(id, this.foodForm.value)
-        .subscribe((res) => {
-          this.ngZone.run(() => this.router.navigateByUrl('/food-truck-list'));
-        });
+        this.foodApi.UpdateFood(id, this.foodForm.value)
+        .subscribe({
+          next: (data) => {
+            this.router.navigateByUrl('/food-truck-list');
+          },
+          error: (err) => {
+            console.log(err);
+          }
+        })
   }
 }

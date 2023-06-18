@@ -19,7 +19,7 @@
         </mat-form-field>
         <mat-form-field>
           <input matInput readonly [matDatepicker]="picker" placeholder="Date of food truck" formControlName="arrival_date"
-            (dateChange)="formatDate($event)" />
+             />
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
           <mat-error *ngIf="handleError('arrival_date', 'required')">
