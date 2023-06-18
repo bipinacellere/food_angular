@@ -1,0 +1,35 @@
+.truck-item
+{
+    width:200px;
+    min-height: 150px;;
+    border:1px solid #ccc; 
+    float: left;
+    margin-right :20px;
+    margin-top: 20px;
+    padding:20px;
+    text-align:center;
+    font-weight: bold;
+    opacity: 1;
+    box-shadow: inset rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.truck-img {
+    padding-top:10px;
+    width:160px;
+}
+.food-bg {
+    position: relative; 
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.food-bg::before {    
+    content: "";
+    /* background-image: url('http://localhost:4200/assets/images/food_bg.png'); */
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.1;
+}

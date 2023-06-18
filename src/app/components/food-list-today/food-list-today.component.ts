@@ -8,6 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-food-list-today',
   templateUrl: './food-list-today.component.html',
+  styleUrls: ['./food-list-today.component.css']
 })
 export class FoodListTodayComponent implements OnInit {
   FoodData: any = [];
