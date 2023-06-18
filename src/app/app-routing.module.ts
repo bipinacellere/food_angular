@@ -7,7 +7,7 @@ import { FoodListTodayComponent } from './components/food-list-today/food-list-t
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'food-truck-list' },
+  { path: '', pathMatch: 'full', redirectTo: 'food-truck-list-today' },
   { path: 'add-food-truck', component: AddFoodComponent },
   { path: 'edit-food-truck/:id', component: EditFoodComponent },
   { path: 'food-truck-list', component: FoodListComponent },
