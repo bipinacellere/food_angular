@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. Permits easy data entry
 2. Allows a quick view of today's Food Truck options.
 
-## Screens
+## Screenshots
 
 ### Manage Food Trucks.
 ![image](https://github-production-user-asset-6210df.s3.amazonaws.com/10547276/246673720-661f2fa1-68cf-4772-be1c-2cc9573d266d.png)
