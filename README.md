@@ -6,6 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. Permits easy data entry
 2. Allows a quick view of today's Food Truck options.
 
+## Embold Badges
+![Quality Gate](https://app.embold.io/api/badges?repositoryUid=01c849e1c43b4c57e1e141a744c00797&type=qualityGate)
+![Rating](https://app.embold.io/api/badges?repositoryUid=01c849e1c43b4c57e1e141a744c00797&type=rating)
+
 ## Screenshots
 
 ### Manage Food Trucks.
