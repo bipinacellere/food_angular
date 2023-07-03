@@ -6,6 +6,9 @@ import { AddFoodComponent } from './components/add-food/add-food.component';
 import { EditFoodComponent } from './components/edit-food/edit-food.component';
 import { FoodListComponent } from './components/food-list/food-list.component';
 import { FoodListTodayComponent } from './components/food-list-today/food-list-today.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { httpInterceptorProviders } from './helpers/http.interceptor';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +25,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddFoodComponent,
     EditFoodComponent,
     FoodListComponent,
-    FoodListTodayComponent
+    FoodListTodayComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

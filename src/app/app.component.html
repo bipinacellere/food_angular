@@ -1,22 +1,48 @@
 <!-- Toolbar -->
-<mat-toolbar color="primary" class="header">
+<!-- <mat-toolbar color="primary" class="header">
   <div>Manage Food Truck</div>
   
   <span class="nav-tool-items">
     <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
   </span>
   <button mat-raised-button routerLink="/food-truck-list-today">Today's Food Trucks</button>
-</mat-toolbar>
+  <button mat-raised-button *ngIf="!isLoggedIn" routerLink="/register">Sign Up</button>
+  <button mat-raised-button *ngIf="!isLoggedIn" routerLink="/login">Sign In</button>
+  <div *ngIf="isLoggedIn">{{ username }}</div>
+  <a href class="nav-link" *ngIf="isLoggedIn" (click)="logout()">LogOut</a>
+</mat-toolbar> -->
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Food Truck</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/food-truck-list-today" class="nav-link" routerLink="food-truck-list-today">Today's Food Trucks</a>
+      </li>
+    </ul>
 
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/food-truck-list" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 <mat-sidenav-container>
   <!-- Sidenav -->
-  <mat-sidenav
-    #sidenav
-    [mode]="isBiggerScreen() ? 'over' : 'side'"
-    [(opened)]="opened"
-    [fixedInViewport]="true"
-    [fixedTopGap]
-  >
+  <mat-sidenav [hidden]="!(isLoggedIn)" #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+    [fixedTopGap]>
     <mat-nav-list>
       <a mat-list-item routerLinkActive="active" routerLink="/add-food-truck">
         <mat-icon>add</mat-icon> Add Food Truck

@@ -1,5 +1,7 @@
 import { Component, ViewChild, HostListener, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { StorageService } from './shared/storage.service';
+import { AuthService } from './shared/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +10,23 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class AppComponent {
   opened = true;
+  isLoggedIn = false;
+  username?: string;
   @ViewChild('sidenav',{static:true}) sidenav: MatSidenav;
 
+  constructor(
+    private storageService: StorageService, private authService: AuthService
+  ) {}
+
   ngOnInit() {
-    console.log(window.innerWidth);
+    this.isLoggedIn = this.storageService.isLoggedIn();
+
+    if (this.isLoggedIn) {
+      const user = this.storageService.getUser();
+
+      this.username = user.username;
+    }
+
     if (window.innerWidth < 768) {
       this.sidenav.fixedTopGap = 55;
       this.opened = false;
@@ -42,5 +57,10 @@ export class AppComponent {
     } else {
       return false;
     }
+  }
+
+  logout(): void {
+    this.storageService.clean();
+    window.location.reload();
   }
 }
